@@ -1,0 +1,6 @@
+<div>
+    <label for="">Nombre:</label>
+    <input [(ngModel)]="nombre" type="text" [value]="nombre">
+</div>
+<span>{{ textoError }}</span>
+<button [disabled]="disabled" (click)="ejecutar()">ejecutar</button>
