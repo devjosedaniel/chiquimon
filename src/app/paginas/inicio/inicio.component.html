@@ -1,6 +1,22 @@
-<div>
-    <label for="">Nombre:</label>
-    <input [(ngModel)]="nombre" type="text" [value]="nombre">
+<div class="container">
+    <table class="table table-bordered table-stripper">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <!-- <th>Direccion</th>
+                <th>Edad</th> -->
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of clientes()">
+                <td>{{ c.nombre }}</td>
+                <td>{{ c.apellido }}</td>
+                <!-- <td>{{ c.direccion }}</td>
+                <td>{{ c.edad }}</td> -->
+                <td><button class="btn btn-primary btn-sm" (click)="enviar(c)" type="button">Enviar </button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<span>{{ textoError }}</span>
-<button [disabled]="disabled" (click)="ejecutar()">ejecutar</button>
